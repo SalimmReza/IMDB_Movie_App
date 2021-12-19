@@ -25,6 +25,7 @@
             android:scaleType="centerCrop"/>
 
         <TextView
+            android:id="@+id/movie_name_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Movie Name"
