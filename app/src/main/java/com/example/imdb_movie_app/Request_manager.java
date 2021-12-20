@@ -3,7 +3,9 @@ package com.example.imdb_movie_app;
 import android.content.Context;
 import android.widget.Toast;
 
+import com.example.imdb_movie_app.Modelss.Details_api_class;
 import com.example.imdb_movie_app.Modelss.Search_api_response;
+import com.example.imdb_movie_app.listener.On_details_api_listener;
 import com.example.imdb_movie_app.listener.On_search_api_listener;
 
 import retrofit2.Call;
@@ -49,6 +51,29 @@ public class Request_manager {
         });
     }
 
+    public void search_movies_details(On_details_api_listener listener , String movie_id){
+        get_movies_details get_movies_details= retrofit.create(Request_manager.get_movies_details.class);
+        Call<Details_api_class>call = get_movies_details.call_movies_details(movie_id);
+
+        call.enqueue(new Callback<Details_api_class>() {
+            @Override
+            public void onResponse(Call<Details_api_class> call, Response<Details_api_class> response) {
+                if (!response.isSuccessful())
+                {
+                    Toast.makeText(context, "Couldn't Fetch Data!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                listener.onResponse(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<Details_api_class> call, Throwable t) {
+
+                listener.onError(t.getMessage());
+            }
+        });
+    }
+
     public interface get_movies{
 
         @Headers({
@@ -58,5 +83,16 @@ public class Request_manager {
         })
         @GET("search/{movies_name}")
         Call<Search_api_response> call_movies(@Path("movies_name") String movies_name);
+    }
+
+    public interface get_movies_details{
+
+        @Headers({
+                "Accept: application/json",
+                "x-rapidapi-host: imdb-internet-movie-database-unofficial.p.rapidapi.com",
+                "x-rapidapi-key: c5f665f885msh9ec9d6dd07c74f0p195cdbjsn7d275ecb18c3"
+        })
+        @GET("film/{movie_id}")
+        Call<Details_api_class> call_movies_details(@Path("movie_id") String movie_id);
     }
 }

@@ -42,6 +42,7 @@ public class Home_recycler_adapter extends RecyclerView.Adapter<HomeViewHolder>{
     public void onBindViewHolder(@NonNull HomeViewHolder holder, int position) {
 
         holder.textView.setText(list.get(position).getTitle());
+        holder.textView.setSelected(true);
         Picasso.get().load(list.get(position).getImage()).into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

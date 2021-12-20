@@ -25,7 +25,7 @@
             android:layout_height="?attr/actionBarSize"
            app:iconifiedByDefault="false"
             app:queryHint="Search"
-            android:padding="10dp"
+            android:padding="5dp"
 
             />
 
@@ -50,7 +50,16 @@
 
 
 
+
+
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_height="300dp"
+        android:src="@drawable/serie"/>
 
 
 
