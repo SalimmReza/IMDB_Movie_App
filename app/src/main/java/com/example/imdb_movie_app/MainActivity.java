@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -82,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements On_movie_click_li
 
     @Override
     public void on_movie_clicked(String id) {
-        Toast.makeText(MainActivity.this, id, Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(MainActivity.this, Details_activity.class)
+        .putExtra("data" , id));
 
 
     }

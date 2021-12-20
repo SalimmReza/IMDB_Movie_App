@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/university/android/_projects/IMDB_Movie_App/app/src/main/res/layout/activity_details.xml" value="0.1" />
         <entry key="..\:/university/android/_projects/IMDB_Movie_App/app/src/main/res/layout/activity_main.xml" value="0.144" />
+        <entry key="..\:/university/android/_projects/IMDB_Movie_App/app/src/main/res/layout/cast_list.xml" value="0.2045045045045045" />
         <entry key="..\:/university/android/_projects/IMDB_Movie_App/app/src/main/res/layout/home_movie_list.xml" value="0.136" />
       </map>
     </option>
