@@ -1,4 +1,4 @@
-# IMDB_Movie_App
+  <h1 align="center">IMDB_Movie_App </h1> 
 
 ### REST API Link:
 https://rapidapi.com/hmerritt/api/imdb-internet-movie-database-unofficial
